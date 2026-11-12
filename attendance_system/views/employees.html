@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employees - Attendance System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <a class="brand" href="/">Attendance System</a>
+        <div class="nav-links">
+            <a href="/">Home</a>
+            <a href="/employees" class="active">Employees</a>
+            <a href="/attendance">Attendance</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% for category, message in messages %}
+                <div class="flash {{ category }}">{{ message }}</div>
+            {% endfor %}
+        {% endwith %}
+
+        <h1>Employees</h1>
+
+        <div class="form-box">
+            <h2>Add Employee</h2>
+            <form action="/employees" method="POST">
+                <label for="name">Employee Name</label>
+                <input type="text" id="name" name="name" placeholder="e.g. Priya Sharma" required>
+
+                <label for="department">Department</label>
+                <input type="text" id="department" name="department" placeholder="e.g. Computer Science" required>
+
+                <button type="submit">Add Employee</button>
+            </form>
+        </div>
+
+        <div class="table-box">
+            <h2>All Employees</h2>
+            {% if employees %}
+            <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Department</th>
+                </tr>
+                {% for emp in employees %}
+                <tr>
+                    <td>{{ emp.id }}</td>
+                    <td>{{ emp.name }}</td>
+                    <td>{{ emp.department }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+            {% else %}
+            <p class="empty">No employees yet. Add one using the form above.</p>
+            {% endif %}
+        </div>
+
+        <br>
+        <a href="/">Back to Home</a>
+    </div>
+</body>
+</html>

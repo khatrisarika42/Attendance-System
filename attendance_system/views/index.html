@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Attendance System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav class="navbar">
+        <a class="brand" href="/">Attendance System</a>
+        <div class="nav-links">
+            <a href="/" class="active">Home</a>
+            <a href="/employees">Employees</a>
+            <a href="/attendance">Attendance</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Attendance Management System</h1>
+        <p>Welcome, Admin! Choose an option below to get started:</p>
+
+        <div class="cards">
+            <div class="card">
+                <h2>Manage Employees</h2>
+                <p>Add new employees and view everyone in the system.</p>
+                <a href="/employees">Go to Employees</a>
+            </div>
+            <div class="card">
+                <h2>Mark Attendance</h2>
+                <p>Record who was present or absent and view past records.</p>
+                <a href="/attendance">Go to Attendance</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,12 @@
+# Python
+__pycache__/
+*.pyc
+
+# Local database (created automatically on first run)
+attendance_system/database/
+
+# Generated zip archive
+*.zip
+
+# Stale duplicate copy of the app (do not edit)
+attendance_system/attendance_system/
