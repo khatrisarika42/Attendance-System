@@ -2,6 +2,9 @@
 __pycache__/
 *.pyc
 
+# Local agent instructions - not for the public repo
+AGENTS.md
+
 # Local database (created automatically on first run)
 attendance_system/database/
 
